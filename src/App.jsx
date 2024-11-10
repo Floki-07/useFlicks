@@ -107,6 +107,9 @@ export default function App() {
       try {
         setisLoading(true);
         seterror('');
+        let url=import.meta.env.VITE_URL;
+        console.log((url));
+        
         let res = await fetch(`${import.meta.env.VITE_URL}&s=${query}`, { signal });
         if (!res.ok) {
           throw new Error(`Error occurred while fetching`);
