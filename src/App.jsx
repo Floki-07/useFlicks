@@ -119,8 +119,10 @@ export default function App() {
     <>
       <Navbar >
         <Logo />
-        <SearchBar query={query} setQuery={setQuery} />
-        <Info movies={movies} />
+        <div className="wrapper1">
+          <SearchBar query={query} setQuery={setQuery} />
+          <Info movies={movies} />
+        </div>
       </Navbar>
 
       <Main>
@@ -171,12 +173,12 @@ function Box({ movies, children, setselectedmovieId }) {
   const [isOpen1, setIsOpen1] = useState(true);
   return (
     <div className="box">
-      <button
+      {/* <button
         className="btn-toggle"
         onClick={() => setIsOpen1((open) => !open)}
       >
         {isOpen1 ? "–" : "+"}
-      </button>
+      </button> */}
 
       {isOpen1 && (
         children
@@ -289,10 +291,10 @@ function WathcedMovieList({ watched, handleDelete }) {
 
 function WatchedMovie({ movie, handleDelete }) {
 
-  return <li key={movie.imdbID}>
+  return <li  key={movie.imdbID}>
     <img src={movie.Poster} alt={`${movie.Title} poster`} />
     <h3>{movie.Title}</h3>
-    <div>
+    <div className="moviewise">
       <p>
         <span>⭐️</span>
         <span>{movie.imdbRating}</span>
