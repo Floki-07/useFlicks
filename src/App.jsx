@@ -63,8 +63,8 @@ export default function App() {
         seterror('');
         let url=import.meta.env.VITE_URL;
         console.log((url));
-        
-        let res = await fetch(`http://www.omdbapi.com/?apikey=ce260100&s=${query}`, { signal });
+      
+        let res = await fetch(`https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?apikey=ce260100&s=${query}`, { signal });
         if (!res.ok) {
           throw new Error(`Error occurred while fetching`);
         }
@@ -191,7 +191,7 @@ function Movielist({ movies, setselectedmovieId }) {
     {movies?.map((movie) => (
       <Movie
         movie={movie}
-        key={crypto.randomUUID()}
+        key={movie.imdbID}
         setselectedmovieId={setselectedmovieId}
       />
     ))}
