@@ -62,7 +62,7 @@ export default function App() {
         setisLoading(true);
         seterror('');
         let url=import.meta.env.VITE_URL;
-        console.log((url));
+        // console.log((url));
       
         let res = await fetch(`https://www.omdbapi.com/?apikey=ce260100&s=${query}`, { signal });
         if (!res.ok) {
