@@ -64,7 +64,7 @@ export default function App() {
         let url=import.meta.env.VITE_URL;
         console.log((url));
       
-        let res = await fetch(`https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?i=tt3896198&apikey=cfedc312&s=${query}`, { signal });
+        let res = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=cfedc312&s=${query}`, { signal });
         if (!res.ok) {
           throw new Error(`Error occurred while fetching`);
         }

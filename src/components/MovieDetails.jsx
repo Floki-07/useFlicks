@@ -21,7 +21,7 @@ const MovieDetails = ({ movieId, addMovie, watched, onDelete }) => {
         const fetchMovieDetails = async () => {
             try {
                 setIsLoading(true);
-                const res = await fetch(`https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?i=tt3896198&apikey=cfedc312&i=${movieId}`);
+                const res = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=cfedc312&i=${movieId}`);
                 const data = await res.json();
                 setMovie(data);
             } catch (error) {
