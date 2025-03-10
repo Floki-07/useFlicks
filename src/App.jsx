@@ -277,7 +277,7 @@ function WathcedMovieList({ watched, handleDelete }) {
     <ul className="list">
       {watched?.length > 0 ? (
         watched.map((movie) => (
-          <WatchedMovie movie={movie} key={crypto.randomUUID()} handleDelete={handleDelete} />
+          <WatchedMovie movie={movie} key={movie.imdbID} handleDelete={handleDelete} />
         ))
       ) : (
         <div className="watchlistEmpty ">Watchlist Empty</div>
